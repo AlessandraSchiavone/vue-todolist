@@ -55,8 +55,6 @@ var app = new Vue(
                 }else{
                     this.toDoList[indexToChange].completed = false;
                 }
-                
-                console.log(indexToChange, this.toDoList[indexToChange].completed);
             }
         }
 

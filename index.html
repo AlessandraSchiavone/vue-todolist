@@ -7,20 +7,25 @@
         <title>Vue ToDoList</title>
         <link rel="stylesheet" href="css/style.css">
         <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
     <body>
         <div id="root">
+            <h1>To do List:</h1>
             <div>
                 <input id="newToDo" type="text" placeholder="Inserisci un nuovo to-Do" v-model="newToDo.testo" @keydown.enter ="addToDo">
                 <button @click="addToDo">Aggiungi</button>
             </div>
-            <ul v-if="toDoList.length > 0">
+            <ol class="block-note" v-if="toDoList.length > 0">
                 <li v-for="(toDo, index) in toDoList">
                     <span @click="changeCompleted(index)" :class="toDoList[index].completed ? 'completed' : '' ">{{ toDo.testo }}</span>
                     <i class="far fa-times-circle" @click="removeToDo(index)"></i> 
                 </li>   
-            </ul>
+            </ol class="block-note">
+        
             <h1 v-else>Non ci sono cose da fare!</h1>
         </div>
         <script src="js/script.js"></script>     
