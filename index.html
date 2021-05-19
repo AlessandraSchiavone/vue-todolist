@@ -17,7 +17,7 @@
             </div>
             <ul v-if="toDoList.length > 0">
                 <li v-for="(toDo, index) in toDoList">
-                    {{ toDo.testo }} 
+                    <span @click="changeCompleted(index)" :class="toDoList[index].completed ? 'completed' : '' ">{{ toDo.testo }}</span>
                     <i class="far fa-times-circle" @click="removeToDo(index)"></i> 
                 </li>   
             </ul>

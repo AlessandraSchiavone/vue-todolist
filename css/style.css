@@ -7,7 +7,12 @@ li{
     margin: 5px 50px;
     padding:10px 0px;
     font-size: 25px;
+}
+span{
     cursor: pointer;
+}
+.completed{
+    text-decoration:line-through;
 }
 .fa-times-circle{
     cursor:pointer;

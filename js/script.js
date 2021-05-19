@@ -46,10 +46,17 @@ var app = new Vue(
                     this.newToDo = {
                         testo: "",
                         completed:false
-                     };
-                   
+                     };  
+                }
+            },
+            changeCompleted: function(indexToChange){
+                if(this.toDoList[indexToChange].completed == false){
+                    this.toDoList[indexToChange].completed = true;
+                }else{
+                    this.toDoList[indexToChange].completed = false;
                 }
                 
+                console.log(indexToChange, this.toDoList[indexToChange].completed);
             }
         }
 
